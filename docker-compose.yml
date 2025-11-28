@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+    php-apache:
+        container_name: "uas-app"
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/var/www/html
+        ports:
+            - "8085:80"
+        depends_on:
+            - db
+        networks:
+            - default
+
+    db:
+        container_name: "uas-database"
+        image: mysql:8.2
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: 23324
+            MYSQL_DATABASE: uas_db
+            MYSQL_USER: uas_user
+            MYSQL_PASSWORD: 23324
+        volumes:
+            - db_data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        networks:
+            - default
+
+    node:
+        container_name: "node-js"
+        image: node:20
+        restart: always
+        working_dir: /var/www/html
+        volumes:
+            - .:/var/www/html
+        ports:
+            - "5173:5173"
+        command: ["bash", "-lc", "npm install && npm run dev"]
+        networks:
+            - default
+
+    adminer:
+        container_name: "uas-adminer"
+        image: adminer
+        restart: always
+        ports:
+            - "8080:8080"
+        depends_on:
+            - db
+        networks:
+            - default
+
+    redis:
+        container_name: "uas-redis"
+        image: redis:alpine
+        restart: always
+        ports:
+            - "6379:6379"
+        networks:
+            - default
+
+volumes:
+    db_data:
+
+networks:
+    default:
+        name: uas-network
