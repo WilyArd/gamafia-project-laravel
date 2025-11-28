@@ -101,7 +101,3 @@ Gamafia is a modern game server hosting platform built with Laravel 11. It provi
 ## 🤝 Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
-
-## 📄 License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
