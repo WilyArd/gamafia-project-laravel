@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Filament\Resources;
+
+use App\Filament\Resources\ActivityResource\Pages;
+use Spatie\Activitylog\Models\Activity;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+
+class ActivityResource extends Resource
+{
+    protected static ?string $model = Activity::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
+
+    protected static ?string $navigationGroup = 'System';
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                Forms\Components\TextInput::make('log_name')
+                    ->required(),
+                Forms\Components\TextInput::make('description')
+                    ->required(),
+                Forms\Components\TextInput::make('subject_type'),
+                Forms\Components\TextInput::make('subject_id'),
+                Forms\Components\TextInput::make('causer_type'),
+                Forms\Components\TextInput::make('causer_id'),
+                Forms\Components\KeyValue::make('properties'),
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('subject_type')
+                    ->label('Subject')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('causer.name')
+                    ->label('User')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable(),
+            ])
+            ->defaultSort('created_at', 'desc')
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\ViewAction::make(),
+            ])
+            ->bulkActions([
+                //
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListActivities::route('/'),
+            'view' => Pages\ViewActivity::route('/{record}'),
+        ];
+    }
+}
