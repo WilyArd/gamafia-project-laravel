@@ -138,10 +138,10 @@
                     Kami mengoptimalkan server untuk berbagai game favorit Anda. Instalasi mudah dengan satu klik.
                 </p>
             </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <div class="flex flex-wrap justify-center gap-6">
                 <div
-                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30">
-                    <img src="https://placehold.co/300x400/000000/FFFFFF?text=Minecraft" alt="Minecraft"
+                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/30 w-full sm:w-1/3 md:w-1/4 lg:w-1/5">
+                    <img src="https://i.pinimg.com/736x/8a/8a/b4/8a8ab42e93738010d9c6af363bc7446a.jpg" alt="Minecraft"
                         class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-4">
@@ -149,26 +149,8 @@
                     </div>
                 </div>
                 <div
-                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/30">
-                    <img src="https://placehold.co/300x400/111827/FFFFFF?text=GTA+V" alt="GTA V"
-                        class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-4">
-                        <h4 class="text-white font-bold text-lg">GTA V</h4>
-                    </div>
-                </div>
-                <div
-                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/30">
-                    <img src="https://placehold.co/300x400/222222/FFFFFF?text=CS:GO+2" alt="CS:GO 2"
-                        class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-4">
-                        <h4 class="text-white font-bold text-lg">CS:GO 2</h4>
-                    </div>
-                </div>
-                <div
-                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/30">
-                    <img src="https://placehold.co/300x400/333333/FFFFFF?text=ARK" alt="ARK"
+                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/30 w-full sm:w-1/3 md:w-1/4 lg:w-1/5">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/ArkSurvivalEvolved.png" alt="ARK"
                         class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-4">
@@ -176,12 +158,12 @@
                     </div>
                 </div>
                 <div
-                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-rose-500/30">
-                    <img src="https://placehold.co/300x400/444444/FFFFFF?text=Palworld" alt="Palworld"
-                        class="w-full h-full object-cover">
+                    class="group relative rounded-lg overflow-hidden aspect-w-3 aspect-h-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-rose-500/30 w-full sm:w-1/3 md:w-1/4 lg:w-1/5">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Terraria_Steam_artwork.jpg/250px-Terraria_Steam_artwork.jpg"
+                        alt="Terraria" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-4">
-                        <h4 class="text-white font-bold text-lg">Palworld</h4>
+                        <h4 class="text-white font-bold text-lg">Terraria</h4>
                     </div>
                 </div>
             </div>
@@ -252,7 +234,7 @@
                         Bergabunglah dengan ribuan gamer yang mempercayai Gamafia untuk kebutuhan hosting server mereka.
                     </p>
                     <div class="flex justify-center items-center space-x-4">
-                        <a href="#harga"
+                        <a href="{{ url('games') }}"
                             class="bg-indigo-600 px-8 py-3 rounded-md text-white font-bold hover:bg-indigo-500 transition-all transform hover:scale-105 shadow-lg shadow-indigo-600/30">
                             Mulai Sekarang
                         </a>
