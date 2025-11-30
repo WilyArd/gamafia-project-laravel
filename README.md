@@ -2,7 +2,7 @@
 
 Gamafia is a modern game server hosting platform built with Laravel 11. It provides a seamless experience for gamers to rent and manage high-performance game servers.
 
-![Gamafia Dashboard](https://placehold.co/1200x600/101115/FFFFFF?text=Gamafia+Dashboard)
+![Gamafia Dashboard](https://drive.google.com/file/d/1Dj3T0e1aRjUcJEOoppiRi85ZT7qo9Ffq/view?usp=sharing)
 
 ## 🚀 Features
 
