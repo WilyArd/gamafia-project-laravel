@@ -5,6 +5,65 @@
 @section('footer')
 @endsection
 
+@push('scripts')
+<style>
+    @media print {
+        /* Sembunyikan elemen yang tidak perlu */
+        header, footer, .no-print, button, a[href] {
+            display: none !important;
+        }
+
+        /* Reset background dan warna teks */
+        body, .min-h-screen, .bg-\[\#141824\], .glassmorphism {
+            background: white !important;
+            color: black !important;
+            min-height: auto !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Pastikan teks terlihat jelas */
+        .text-white, .text-gray-300, .text-gray-400, .text-indigo-400 {
+            color: black !important;
+        }
+
+        /* Atur layout container */
+        .container, .max-w-4xl {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        /* Perbaiki tabel */
+        table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+        }
+        
+        th, td {
+            border: 1px solid #ddd !important;
+            padding: 8px !important;
+            color: black !important;
+        }
+
+        thead {
+            background-color: #f3f4f6 !important; /* Abu-abu terang */
+            color: black !important;
+        }
+        
+        /* Hapus background badge status */
+        .bg-green-900\/50, .bg-red-900\/50 {
+            background: transparent !important;
+            border: 1px solid black !important;
+            color: black !important;
+        }
+    }
+</style>
+@endpush
+
 @section('content')
 <div class="pt-24 pb-12 bg-[#141824] min-h-screen">
     <div class="container mx-auto px-4">
@@ -110,7 +169,7 @@
                 </div>
 
                 <!-- Tombol Aksi -->
-                <div class="mt-10 pt-6 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <div class="mt-10 pt-6 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 no-print">
                     <a href="{{ route('client.invoices.index') }}" class="bg-gray-700/50 border border-gray-600 px-6 py-2 rounded-md text-white hover:bg-gray-600/50 transition-colors w-full sm:w-auto text-center">
                         &larr; Kembali ke Daftar Faktur
                     </a>
