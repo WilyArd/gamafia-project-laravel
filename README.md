@@ -9,10 +9,16 @@ Gamafia is a modern game server hosting platform built with Laravel 11. It provi
 -   **Modern UI/UX**: Built with Tailwind CSS and Alpine.js, featuring a dark mode, glassmorphism design, and responsive layout.
 -   **User Dashboard**: Manage subscriptions, view invoices, and monitor server status.
 -   **Admin Panel**: Powered by Filament, allowing easy management of games, packages, and users.
+-   **Activity Logging**: Track all user and admin actions (Create, Update, Delete) for better security and auditing.
+-   **Security**:
+    -   **UUIDs**: User IDs are randomized UUIDs for enhanced security.
+    -   **Session Isolation**: Admin and Client sessions are separated to prevent access conflicts.
+    -   **Soft Deletes**: Games and Packages are safely archived instead of permanently deleted.
 -   **Google Authentication**: Secure and quick login/registration via Google OAuth.
 -   **Dynamic Pricing**: Flexible pricing models with premium location add-ons.
 -   **Stock Management**: Real-time stock tracking for server packages.
 -   **Payment Gateway Integration**: Supports QRIS, Virtual Accounts, and E-Wallets (simulated).
+-   **Print-Friendly Invoices**: Professional, ink-friendly invoice printing.
 
 ## 🛠️ Tech Stack
 
@@ -21,6 +27,7 @@ Gamafia is a modern game server hosting platform built with Laravel 11. It provi
 -   **Frontend**: Blade, [Tailwind CSS](https://tailwindcss.com), [Alpine.js](https://alpinejs.dev)
 -   **Database**: MySQL 8.0
 -   **Cache/Queue**: Redis
+-   **Logging**: Spatie Activitylog
 -   **Containerization**: Docker & Docker Compose
 
 ## 📦 Installation
@@ -79,7 +86,7 @@ Gamafia is a modern game server hosting platform built with Laravel 11. It provi
 
 | Role      | Email               | Password   |
 | :-------- | :------------------ | :--------- |
-| **Admin** | `admin@example.com` | `password` |
+| **Admin** | `admin@gamafia.com` | `password` |
 | **User**  | `user@example.com`  | `password` |
 
 ## 📝 Usage Guide
